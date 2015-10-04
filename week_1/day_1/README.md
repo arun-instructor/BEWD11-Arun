@@ -51,3 +51,47 @@ Here are a couple of resources to help you learn:
 - GitHub lets you view your code online easily with a web interface.
 - GitHub is free to use as long as you make your code public.
 Private repositories cost a monthly fee.
+
+## Git Class Demonstration
+- We will practice setting up a new Git repository and pushing it to GitHub.
+- Note that empty repositories cannot be added to GitHub.
+- Here is a cheatsheet of commands we will be using:
+
+Add files to Git tracking:
+
+```
+git add -A
+```
+
+Commit files to local Git repository:
+
+```
+git commit -m "Initial commit"
+```
+
+Add remote to push to:
+
+```
+git remote add origin http://yourgithuburl.com
+```
+
+Push to remote repository:
+
+```
+git push -u origin master
+```
+
+## Git Collaboration Strategies
+- Git enables a good amount of collaboration strategies that help you work together with other developers on code.
+- There are many strategies, but two most common ones - branching and forking.
+- In the branching model, each developer is a collaborator on the project and can push directly to the repository. He or she will write code and commit it to a feature or bug branch directly to the repository.
+- In the forking model, no developer is a collaborator, but instead work off of a forked copy of the repository. Any changes are then submitted to the repository owner via a "pull request."
+- There are pros and cons of both, but especially when you're new to this we would recommend the forking approach.
+
+## Git Fork Lab
+- Step 1: Get into groups of two and select one person to own the main repository (owner).
+- Step 2: Owner should create a new project with a file and push it to GitHub.
+- Step 3: Your coworker should then fork the repository and make a change.
+- Step 4: Coworker should now submit a pull request for the change.
+- Step 5: Owner should accept the pull request and issue a `git pull` to receive the newest changes locally.
+- Step 6: Repeat steps so other partner can be owner.
