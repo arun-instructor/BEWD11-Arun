@@ -18,6 +18,10 @@ Many of the tasks we need to carry out (such as committing our code) are best pe
 	- ruby file.rb (this would run a Ruby file named file.rb)
 - This is the basis of how we will be writing and testing our Ruby applications in the initial portion of this course.
 
+Here are a couple of resources to help you learn:
+- [http://cli.learncodethehardway.org/book/](http://cli.learncodethehardway.org/book/)
+- [http://praxis.scholarslab.org/scratchpad/bash/](http://praxis.scholarslab.org/scratchpad/bash/)
+
 ## In-Class Demonstration
 1. Create a new directory
 2. Create a new file and add some text to it
@@ -25,6 +29,14 @@ Many of the tasks we need to carry out (such as committing our code) are best pe
 4. Create a directory with a file inside of your current directory
 5. Practice navigating back and forth between directories
 6. Rename one of your directories
+
+## In-Class Lab
+1. Create a new folder and `cd` into it.
+2. Retrieve your working directory. Hint: Print your working directory :)
+3. Create two new files with some text inside.
+4. Create a new folder inside your original folder and copy your files into it.
+5. Print out the contents of each of these files into the terminal.
+6. Try using the `sed` command to replace some text in your files. Here is a good [reference](http://www.folkstalk.com/2012/01/sed-command-in-unix-examples.html).
 
 ## Introduction to Git
 - Git is a source control management tool.
