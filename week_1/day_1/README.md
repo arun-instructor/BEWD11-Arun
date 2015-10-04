@@ -95,3 +95,10 @@ git push -u origin master
 - Step 4: Coworker should now submit a pull request for the change.
 - Step 5: Owner should accept the pull request and issue a `git pull` to receive the newest changes locally.
 - Step 6: Repeat steps so other partner can be owner.
+
+## Homework
+- Your homework is to catch up on Ruby syntax so you're ready for next class.
+- Make sure you have completed the following tutorials:
+	- [Codecademy Ruby Tutorial](https://www.codecademy.com/tracks/ruby) - The Introduction to Ruby section
+	- [Try Ruby](http://tryruby.org)
+- Also make sure to review Git and the workflow for collaborating.
