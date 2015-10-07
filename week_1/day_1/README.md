@@ -1,5 +1,11 @@
 # Welcome to BEWD 11!
 
+## About the Class
+- Homework will be due each Tuesday at the start of class.
+- It is highly recommended to attend at least 80% of the classes. Each class we will be covering a lot of material.
+- You are expected to put in about 6-10 hours of work outside of class each week.
+- We recommend finding a partner or two that you can study with. This will keep you accountable.
+
 ## The Setup
 - For the class we will be using [Koding](https://koding.com/).
 - Koding allows you to use a Linux virtual machine in the cloud and do all of your coding work there.
