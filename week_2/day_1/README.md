@@ -1,4 +1,4 @@
-# Arrays and Iterators
+# Arrays, Iterators, and Control Flow
 
 ## Introduction to Arrays
 - The array is a data structure that allows you to hold a "collection" of unstructured data in one place.
