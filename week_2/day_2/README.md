@@ -240,3 +240,8 @@ user_emails = ["bob@gmail.com", "csmith@yahoo.com", "kscott@hotmail.com"]
 ```
 
 - **Bonus:** Some of this functionality could be repeated throughout your application. As a bonus, factor out some of your code into modules where appropriate, and use `require` to bring the functionality into your app.
+
+## Challenge
+- If you want some more practice and want to try something a bit harder, check out [this problem set](https://github.com/arun-curriculum/Problem-Solving/tree/master/card_counting).
+- This is the game of Blackjack, designed to help you learn how to count cards.
+- You job is to create the functionality using Ruby.
