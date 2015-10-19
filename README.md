@@ -7,3 +7,6 @@
 ## Week 2: Ruby Basics
 - [Day 1: Arrays, Iterators, and Control Flow](week_2/day_1/)
 - [Day 2: Hashes, Loops, and Modules](week_2/day_2/)
+
+## Week 3: Introduction to Rails
+- [Day 1: Introduction to Rails Framework](week_2/day_1/)

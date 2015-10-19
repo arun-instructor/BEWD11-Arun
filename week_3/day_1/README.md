@@ -171,31 +171,31 @@ rake db:migrate
 
 ##### Create a new user
 
-```
+```ruby
 User.create(firstname: "Arun", lastname: "Sood", email: "arun@email.com")
 ```
 
 ##### List all users in the database
 
-```
+```ruby
 User.all
 ```
 
 ##### Get information about a specific user
 
-```
+```ruby
 User.find(id of user here)
 ```
 
 ##### Update a user
 
-```
+```ruby
 User.find(id of user).update_attributes(firstname: "Arun", lastname: "Sood", email: "arun@email.com")
 ```
 
 ##### Delete a user
 
-```
+```ruby
 User.find(id of user).destroy
 ```
 
