@@ -9,4 +9,4 @@
 - [Day 2: Hashes, Loops, and Modules](week_2/day_2/)
 
 ## Week 3: Introduction to Rails
-- [Day 1: Introduction to Rails Framework](week_2/day_1/)
+- [Day 1: Introduction to Rails Framework](week_3/day_1/)
