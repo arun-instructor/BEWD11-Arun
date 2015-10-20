@@ -207,3 +207,7 @@ User.find(id of user).destroy
 	- Step 1: Set the app up as a Rails app. You will need to move everything into the correct directories and get it working with the asset pipeline.
 	- Step 2: Create your Book model with the proper attributes as per the template.
 	- Step 3: Integrate the form functionality to save, update, and remove books from the library.
+
+## Week-Long Challenge
+- In this challenge we will be working with a real interview problem using some advanced Ruby functionality.
+- You can find the problem [here](https://github.com/arun-curriculum/Problem-Solving/tree/master/obscenity_filter).
