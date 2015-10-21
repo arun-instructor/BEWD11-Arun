@@ -16,7 +16,7 @@
 
 #### Install Rails
 
-`sudo gem install rails`
+`gem install rails --no-ri --no-rdoc`
 
 ## Rails from the Rails People
 
