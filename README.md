@@ -10,3 +10,4 @@
 
 ## Week 3: Introduction to Rails
 - [Day 1: Introduction to Rails Framework](week_3/day_1/)
+- [Day 2: Rails Models](week_3/day_2/)
