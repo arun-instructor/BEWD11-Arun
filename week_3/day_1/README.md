@@ -155,7 +155,8 @@ application.js
 - Follow these steps to complete the app:
 	- Step 1: Set the app up as a Rails app. You will need to move everything into the correct directories and get it working with the asset pipeline.
 	- Step 2: Create your Book model with the proper attributes as per the template.
-	- Step 3: Integrate the form functionality to save, update, and remove books from the library.
+	- Step 3: Add a few books to the database via Rails console.
+	- Step 4: Show all books via the template.
 
 ## Week-Long Challenge
 - In this challenge we will be working with a real interview problem using some advanced Ruby functionality.
