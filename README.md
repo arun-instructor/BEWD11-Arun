@@ -11,3 +11,6 @@
 ## Week 3: Introduction to Rails
 - [Day 1: Introduction to Rails Framework](week_3/day_1/)
 - [Day 2: Rails Models](week_3/day_2/)
+
+## Week 4: Rails Forms and CRUD
+- [Day 1: Rails Forms and Application CRUD](week_4/day_1/)
