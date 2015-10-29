@@ -14,3 +14,4 @@
 
 ## Week 4: Rails Forms and CRUD
 - [Day 1: Rails Forms and Application CRUD](week_4/day_1/)
+- [Day 2: ActiveRecord Validations and Associations](week_4/day_2/)
