@@ -15,3 +15,7 @@
 ## Week 4: Rails Forms and CRUD
 - [Day 1: Rails Forms and Application CRUD](week_4/day_1/)
 - [Day 2: ActiveRecord Validations and Associations](week_4/day_2/)
+
+## Week 5: Associations and Authentication
+- [Day 1: Associations Continued](week_5/day_1/)
+- [Day 2: Authentication with Devise](week_5/day_2/)
