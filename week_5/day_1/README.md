@@ -11,6 +11,7 @@
 ```ruby
 class Student < ActiveRecord::Base
 	has_many :enrollments
+	has_many :courses, through: :enrollments
 end
 ```
 
@@ -28,7 +29,7 @@ end
 ```ruby
 class Course < ActiveRecord::Base
 	has_many :enrollments
-	has_many :students, through: :appointments
+	has_many :students, through: :enrollments
 end
 ```
 
@@ -60,24 +61,17 @@ end
 ```ruby
 resources :students do
 	member do
-		get :enrollments
-		post :enrollments
+		get "/enrollments" => "enrollments#index"
+		post "/enrollments" => "enrollments#create"
 	end
 end
 
 resources :courses
 ```
 
-## Many-to-Many Lab
+## Many-to-Many Lab / Homework
 - In this lab we will practice building out the views and the appropriate functionality for the app above.
 - Your task is to set up views and actions for those views that will do the following: create a student, create a course, create an enrollment for a particular student.
-
-## Homework
-- Homework this week will be to create an inventory management system.
-- As a first step you will create the functionality to add clients and products via forms.
-- As a next step you will create functionality to create a purchase for a specific client (Hint: This is the many-to-many part).
-- Lastly you will add authentication so that you have to be logged in to use the app.
-- The UI will be up to you. If you're not as comfortable in HTML and CSS feel free to create a very simple UI - design is not the important part here.
 
 ## Challenge
 - This week's challenge will be to create a word matcher application that matches words in the dictionary with entered text.
