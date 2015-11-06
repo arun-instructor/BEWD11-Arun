@@ -1,4 +1,4 @@
-# Authentication
+# Authentication and Mailers
 
 ## Introduction
 - Authentication is the process of making sure a user is who they say they are.
@@ -123,6 +123,40 @@ ActionMailer::Base.smtp_settings = {
 }
 ```
 
+## Using ActionMailer
+- ActionMailer is a piece of software built into Rails that helps you send emails using the standard ERB template format we are used to.
+- You can generate different mailers using the command line interface:
+
+```
+rails g mailer UserMailer
+```
+
+- You will now get a file that looks like a controller in your "mailers" folder. Each method you define here is a class method by default:
+
+```ruby
+class UserMailer < ApplicationMailer
+	default from: "Arun Sood <arun.instructor@gmail.com>"
+
+	def say_hello(name)
+		@name = name
+		mail(to: "test@test.com", subject: "Hello there!")
+	end
+end
+```
+
+- The way it works is that you will have views inside of views/user_mailer that have the same names as the method names in the mailer file. Here we have a file called say_hello.html.erb:
+
+```ruby
+<h1>Hello <%= @name %>!</h1>
+```
+
+- We can use this mailer in our controller whenever we need to send mail using this template:
+
+```ruby
+UserMailer.say_hello("Arun Sood").deliver_now
+```
+
 ## Homework
 - For homework you will add an authentication component to your book manager application.
 - Your application should require sign up and login before allowing the users to see and use the book app.
+- **Bonus:** Have your application send an email to the authenticated user when a new book is added.
