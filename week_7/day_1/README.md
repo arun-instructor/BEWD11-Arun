@@ -122,3 +122,4 @@ rvmsudo rails s -p 80 -d
 - For homework we will be practicing our system admin skills by creating a simple application using a gem called Paperclip.
 - You can find the documentation here: https://github.com/thoughtbot/paperclip
 - The frontend has already been done for you [here](member_list/).
+- Your job is to make the application work and then deploy it to AWS.
