@@ -23,3 +23,6 @@
 ## Week 6: Review
 - [Day 1: Assessment](week_6/day_1/)
 - [Day 2: Review Assessment](week_6/day_2/)
+
+## Week 7: Rails in Production
+- [Day 1: Leveraging AWS](week_7/day_1/)
