@@ -159,3 +159,50 @@ production:
   host: database host here
   port: 3306
 ```
+
+## Environment Variables in Rails Apps
+- In production, environment variables allow you to set up single-use secrets that are to be shared across the application.
+- An example would be an API key or database password.
+- An excellent gem for handling these environment variables can be found [here](https://github.com/laserlemon/figaro).
+
+## Database Lab
+- In this lab we will be using RDS and Figaro to break the database of our member list app off to a RDS server.
+- You will be configuring the database to use MySQL and environment variables to store sensitive information.
+
+## Using S3 to Scale Large Data Transfer
+- Another important aspect of a production application is serving large files effectively.
+- If the same servers that serve the main Netflix app had to also transfer the large video files, Netflix would either work terribly or not at all.
+- Services like S3 allow us to store and serve files separately from the main application server.
+- We will install it to store our member list files.
+- Here are the steps we will need to follow:
+
+##### Step 1: Install the AWS-SDK gem
+
+```
+gem 'aws-sdk', '~> 1'
+```
+
+##### Step 2: Configure an AWS initializer
+
+config/initializers/aws.rb
+
+```ruby
+AWS.config(
+	access_key_id: ENV["aws_access_id"],
+	secret_access_key: ENV["aws_secret_id"]
+)
+```
+
+##### Step 3: Add to Paperclip section of model
+
+```ruby
+class User < ActiveRecord::Base
+	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "temp/profile-pic.jpg", :storage => :s3, :bucket => "bucketname"
+  	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+end
+```
+
+## Homework
+- For homework we will be implementing each of these architectural pieces to our blog application.
+- Your job is to first add Paperclip to your blog application for image uploads.
+- Next you will deploy your application to AWS with Apache-Passenger, RDS, Figaro, and S3.
