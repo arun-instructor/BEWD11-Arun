@@ -164,6 +164,11 @@ production:
 - In production, environment variables allow you to set up single-use secrets that are to be shared across the application.
 - An example would be an API key or database password.
 - An excellent gem for handling these environment variables can be found [here](https://github.com/laserlemon/figaro).
+- Since the gem automatically adds application.yml to .gitignore, you will have to copy the file to your Ubuntu server manually:
+
+```
+scp -i AllAccessKey.pem path_to_local_file ubuntu@ip_address:path_to_remote_directory
+```
 
 ## Database Lab
 - In this lab we will be using RDS and Figaro to break the database of our member list app off to a RDS server.
