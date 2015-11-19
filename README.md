@@ -25,4 +25,5 @@
 - [Day 2: Review Assessment](week_6/day_2/)
 
 ## Week 7: Rails in Production
-- [Day 1: Leveraging AWS](week_7/day_1/)
+- [Day 1: Production Rails](week_7/day_1/)
+- [Day 2: Production Infrastructure](week_7/day_2/)
