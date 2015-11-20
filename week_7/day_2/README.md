@@ -92,7 +92,8 @@ Open config:
 sudo nano /etc/apache2/sites-available/testapp.conf
 ```
 
-##### Step 11: Change testapp.conf to match this file:
+##### Step 11: Change testapp.conf to match the file below
+- You will have to edit the DocumentRoot and Directory with your appropriate path to your Rails public directory.
 
 ```
 <VirtualHost *:80>
@@ -100,7 +101,7 @@ sudo nano /etc/apache2/sites-available/testapp.conf
 	ServerAlias www.example.com
 	ServerAdmin webmaster@localhost
 	DocumentRoot /home/rails/testapp/public
-	RailsEnv development
+	RailsEnv production
 	ErrorLog ${APACHE_LOG_DIR}/error.log
 	CustomLog ${APACHE_LOG_DIR}/access.log combined
 	<Directory "/home/rails/testapp/public">
