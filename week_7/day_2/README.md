@@ -222,6 +222,10 @@ class User < ActiveRecord::Base
 end
 ```
 
+##### Step 4: Find your AWS credentials
+- To find your secret key and ID go up to your name in the top right corner and click on "Security Credentials."
+- Then navigate over to "Access Keys."
+
 ## Homework
 - For homework we will be implementing each of these architectural pieces to our blog application.
 - Your job is to first add Paperclip to your blog application for image uploads.
