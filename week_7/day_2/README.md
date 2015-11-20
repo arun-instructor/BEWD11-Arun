@@ -161,6 +161,20 @@ production:
   port: 3306
 ```
 
+- We will also need to install the MySQL adapter to allow our Rails application to "talk" to MySQL:
+
+Install dev tools
+
+```
+sudo apt-get install libmysqlclient-dev
+```
+
+Install MySQL gem
+
+```
+gem "mysql2", "~> 0.3.18"
+```
+
 ## Environment Variables in Rails Apps
 - In production, environment variables allow you to set up single-use secrets that are to be shared across the application.
 - An example would be an API key or database password.
