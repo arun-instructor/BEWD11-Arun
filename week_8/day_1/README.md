@@ -62,14 +62,15 @@ response = request.response.body
 	- Step 1: Integrate the front end into a new Rails application with a controller called Tracks.
 	- Step 2: Create a GET route called "auth/spotify" that will map over to an action called "create" in a controller called "Authentications".
 	- Step 3: Activate the "Login with Spotify" button. You will need to reference the [Spotify Authorization Guide](https://developer.spotify.com/web-api/authorization-guide/) to know what to do.
-	- Step 4: When you retrieve the final Spotify `access_token`, store it in the session. We can now consider the user logged in:
+	- Step 4: When you retrieve the final Spotify `access_token`, store it in the session. We can now consider the user logged in. Code for storing data to sessions can be found below.
+	- Step 5: Show the "View Saved Tracks" and "Save Track" buttons only when the user is logged in.
+	- Step 6: Activate the functionality to save and delete a track.
+
+##### Storing data to sessions
 
 ```ruby
 session[:spotify_access_token] = your_token_here
 ```
-
-	- Step 5: Show the "View Saved Tracks" and "Save Track" buttons only when the user is logged in.
-	- Step 6: Activate the functionality to save and delete a track.
 
 ## Homework Part 2
 - For homework think about your final project and come up with a proposal for your idea.
