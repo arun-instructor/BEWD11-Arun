@@ -27,3 +27,6 @@
 ## Week 7: Rails in Production
 - [Day 1: Production Rails](week_7/day_1/)
 - [Day 2: Production Infrastructure](week_7/day_2/)
+
+## Week 8: Web Requests and OAuth
+- [Day 1: Web Requests and OAuth](week_8/day_1/)

@@ -1,0 +1,24 @@
+body {
+	margin-bottom:40px;
+}
+
+.margin-top-20 {
+	margin-top:20px;
+}
+
+.margin-right-5 {
+	margin-right:5px;
+}
+
+.one-song {
+	padding:15px;
+	background-color:#EBEBEB;
+}
+
+.no-pad {
+	padding:0;
+}
+
+.padding-left-15 {
+	padding-left:15px;
+}
