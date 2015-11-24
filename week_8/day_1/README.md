@@ -38,6 +38,13 @@ request.run
 response = request.response.body
 ```
 
+##### Using response data
+- Data will come back as a string. In order to use it we have to parse it into a hash:
+
+```ruby
+response_json = JSON.parse(response)
+```
+
 ## Spotify API Search Lab
 - In this lab we will use the Spotify API to search for songs and display them via a UI.
 - The front end has been already completed for you [here](spotify_song_search/).
