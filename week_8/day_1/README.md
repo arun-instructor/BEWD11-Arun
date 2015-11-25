@@ -79,6 +79,8 @@ response_json = JSON.parse(response)
 session[:spotify_access_token] = your_token_here
 ```
 
+> Note: Make sure all of your sensitive information goes in application.yml, which is set up when you install the Figaro gem.
+
 ## Homework Part 2
 - For homework think about your final project and come up with a proposal for your idea.
 - The project must employ as many of the principles we learned in class as possible.
