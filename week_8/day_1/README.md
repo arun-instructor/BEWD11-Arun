@@ -92,3 +92,4 @@ session[:spotify_access_token] = your_token_here
 	- Associations
 	- JSON APIs
 	- System architecture
+	- Authentication
