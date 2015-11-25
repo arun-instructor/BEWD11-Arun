@@ -1,4 +1,4 @@
-# JSON APIs
+# Web Requests and OAuth
 
 ## Introduction
 - APIs open up business functionality to the public through a structured access approach.
