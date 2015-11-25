@@ -19,7 +19,7 @@ gem "typhoeus"
 
 ```ruby
 request = Typhoeus::Request.new(
-    "www.example.com",
+    URI.escape("www.example.com"),
     method: :post,
     params: { field1: "a field" },
     headers: { Accept: "text/html" }
