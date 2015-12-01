@@ -28,5 +28,8 @@
 - [Day 1: Production Rails](week_7/day_1/)
 - [Day 2: Production Infrastructure](week_7/day_2/)
 
-## Week 8: Web Requests and OAuth
-- [Day 1: Web Requests and OAuth](week_8/day_1/)
+## Week 8: Web Requests
+- [Day 1: Web Requests](week_8/day_1/)
+
+## Week 9: OAuth and JSON API
+- [Day 1: OAuth](week_9/day_1/)
