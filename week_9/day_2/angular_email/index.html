@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html ng-app="angularEmail">
+<head>
+	<title>Angular Email</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
+	<link rel="stylesheet" href="css/ng-animate.css" />
+
+	<link rel="stylesheet" href="css/style.css" />
+
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" /></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+
+	<script src="https://code.angularjs.org/1.5.0-beta.2/angular-route.min.js"></script>
+
+	<script src="js/app.js"></script>
+</head>
+<body>
+
+<div ng-view></div>
+
+<script type="text/ng-template" id="top-nav.html">
+	<nav class="navbar navbar-default" ng-controller="topNavCtrl">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#/">Angular Email</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li ng-show="loggedIn"><a href="#" ng-click="logout($event);">Logout</a></li>
+					<li ng-hide="loggedIn"><a href="#/signup">Signup</a></li>
+					<li ng-hide="loggedIn"><a href="#/login">Login</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+</script>
+
+<script type="text/ng-template" id="main-nav.html">
+	<div id="main-nav" class="list-group" ng-controller="mainNavCtrl">
+		<a class="list-group-item disabled">
+			{{personName}}
+		</a>
+		<a href="#/" class="list-group-item" ng-class="{active: isActive('/')}">
+			Inbox
+		</a>
+		<a href="#/sent" class="list-group-item" ng-class="{active: isActive('/sent')}">
+			Sent Mail
+		</a>
+		<a href="#/compose" class="list-group-item" ng-class="{active: isActive('/compose')}">
+			Compose
+		</a>
+	</div>
+</script>
+
+<script type="text/ng-template" id="show-mail.html">
+	<ng-include src="'top-nav.html'"></ng-include>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3">
+				<ng-include src="'main-nav.html'"></ng-include>
+			</div>
+			<div class="col-sm-9">
+				<div class="jumbotron" ng-show="emptyMessages">
+					<h2>Nothing Here!</h2>
+					<p>Your friends will write to you I swear.</p>
+					<p><a class="btn btn-primary btn-lg" href="#/compose">Write to them</a></p>
+				</div>
+
+				<div class="list-group">
+					<a href="#/message/{{message.id}}" class="list-group-item" ng-repeat="message in messages">
+						<h4 class="list-group-item-heading">
+							{{message.message_subject}}
+							<small>from {{message.email_from}}</small>
+						</h4>
+						<p class="list-group-item-text">
+							{{message.message_text}}
+						</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/ng-template" id="sent-mail.html">
+	<ng-include src="'top-nav.html'"></ng-include>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3">
+				<ng-include src="'main-nav.html'"></ng-include>
+			</div>
+			<div class="col-sm-9">
+				<div class="jumbotron" ng-show="emptyMessages">
+					<h2>Nothing Here!</h2>
+					<p>You haven't written anything yet.</p>
+					<p><a class="btn btn-primary btn-lg" href="#/compose">Write something</a></p>
+				</div>
+
+				<div class="list-group">
+					<a href="#/message/{{message.id}}" class="list-group-item" ng-repeat="message in messages">
+						<h4 class="list-group-item-heading">
+							{{message.message_subject}}
+							<small>to {{message.email_to}}</small>
+						</h4>
+						<p class="list-group-item-text">
+							{{message.message_text}}
+						</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/ng-template" id="compose-mail.html">
+	<ng-include src="'top-nav.html'"></ng-include>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3">
+				<ng-include src="'main-nav.html'"></ng-include>
+			</div>
+			<div class="col-sm-9">
+				<div>
+					<strong>To:</strong>
+				</div>
+				<div class="margin-top-20">
+					<input type="text" class="form-control" placeholder="Email to" ng-model="message.email_to" />
+				</div>
+				<div class="margin-top-20">
+					<strong>Subject:</strong>
+				</div>
+				<div class="margin-top-20">
+					<input type="text" class="form-control" placeholder="Subject" ng-model="message.message_subject" />
+				</div>
+				<div class="margin-top-20">
+					<strong>Message:</strong>
+				</div>
+				<div class="margin-top-20">
+					<textarea class="form-control" placeholder="Your message here" rows="10" ng-model="message.message_text"></textarea>
+				</div>
+				<div class="margin-top-20">
+					<button type="button" class="btn btn-primary" ng-click="sendMessage();">Send Message</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/ng-template" id="message.html">
+	<ng-include src="'top-nav.html'"></ng-include>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3">
+				<ng-include src="'main-nav.html'"></ng-include>
+			</div>
+			<div class="col-sm-9">
+				<h2>{{message.message_subject}}</h2>
+				<h5>from {{message.email_from}}</h5>
+				<p class="margin-top-20">
+					{{message.message_text}}
+				</p>
+				<p class="margin-top-20">
+					<button type="button" class="btn btn-danger btn-sm" ng-click="deleteMessage();">Delete Message</button>
+				</p>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/ng-template" id="signup.html">
+	<ng-include src="'top-nav.html'"></ng-include>
+
+	<div class="container small-container">
+		<div class="well">
+			<div class="bold">
+				First Name
+			</div>
+			<div class="margin-top-20">
+				<input type="text" class="form-control" placeholder="First Name" ng-model="user.firstname" />
+			</div>
+			<div class="bold margin-top-20">
+				Last Name
+			</div>
+			<div class="margin-top-20">
+				<input type="text" class="form-control" placeholder="Last Name" ng-model="user.lastname" />
+			</div>
+			<div class="bold margin-top-20">
+				Username
+			</div>
+			<div class="margin-top-20">
+				<input type="text" class="form-control" placeholder="Username" ng-model="user.username" />
+			</div>
+			<div class="bold margin-top-20">
+				Email
+			</div>
+			<div class="margin-top-20">
+				<input type="text" class="form-control" placeholder="Email" ng-model="user.email" />
+			</div>
+			<div class="bold margin-top-20">
+				Password
+			</div>
+			<div class="margin-top-20">
+				<input type="password" class="form-control" placeholder="Password" ng-model="user.password" />
+			</div>
+			<div class="bold margin-top-20">
+				Password Confirmation
+			</div>
+			<div class="margin-top-20">
+				<input type="password" class="form-control" placeholder="Password Confirmation" ng-model="user.password_confirmation" />
+			</div>
+			<div class="margin-top-20 text-center">
+				<button type="button" class="btn btn-primary" ng-click="signUp();">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/ng-template" id="login.html">
+	<ng-include src="'top-nav.html'"></ng-include>
+
+	<div class="container small-container">
+		<div class="well">
+			<div class="bold">
+				Email
+			</div>
+			<div class="margin-top-20">
+				<input type="text" class="form-control" placeholder="Email" ng-model="user.email" />
+			</div>
+			<div class="bold margin-top-20">
+				Password
+			</div>
+			<div class="margin-top-20">
+				<input type="password" class="form-control" placeholder="Password" ng-model="user.password" />
+			</div>
+			<div class="margin-top-20 text-center">
+				<button type="button" class="btn btn-primary" ng-click="login();">Login</button>
+			</div>
+		</div>
+	</div>
+</script>
+
+</body>
+</html>
