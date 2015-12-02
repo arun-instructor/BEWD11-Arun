@@ -33,3 +33,4 @@
 
 ## Week 9: OAuth and JSON API
 - [Day 1: OAuth](week_9/day_1/)
+- [Day 2: Building an API](week_9/day_2/)
