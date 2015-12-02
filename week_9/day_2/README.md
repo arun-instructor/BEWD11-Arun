@@ -161,3 +161,37 @@ end
 - The API design documentation can be found [here](angular_email/api_specs.md).
 - Your job is to create an API with all of the endpoints listed in the documentation.
 - You will also need to implement token-based authentication on all of the functionality except signup and login.
+- Since you will be implementing login and signup with Devise through AJAX, a small tweak must be performed to get Devise to work with AJAX requests:
+
+##### controllers/sessions_controller.rb
+
+```ruby
+class SessionsController < Devise::SessionsController  
+	respond_to :json
+end
+```
+
+##### controller/registrations_controller.rb
+
+```ruby
+class RegistrationsController < Devise::RegistrationsController
+	respond_to :json
+
+private
+
+    def sign_up_params
+        params.require(:user).permit(:firstname, :lastname, :email, :password, :password_confirmation, :username)
+    end
+
+    def account_update_params
+        params.require(:user).permit(:firstname, :lastname, :email, :password, :password_confirmation, :current_password, :username)
+    end
+
+end
+```
+
+##### config/routes.rb
+
+```ruby
+devise_for :users, :controllers => { registrations: "registrations", sessions: "sessions" }
+```
