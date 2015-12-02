@@ -18,7 +18,7 @@ http://mysite.com/users
 
 ##### Response:
 
-```json
+```javascript
 [
 	{
 		firstname: "Bob",
@@ -43,7 +43,7 @@ http://mysite.com/users/1
 
 ##### Response:
 
-```json
+```javascript
 {
 	firstname: "Bob",
 	lastname: "Jones",
