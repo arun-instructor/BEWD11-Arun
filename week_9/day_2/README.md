@@ -76,6 +76,12 @@ end
 
 > Notice that each response (render) has a status code attached with it. This is very crucial to API design. A list of applicable status codes can be found [here](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
 
+## Rails as an API
+- Rails does great as an API, but as you already know, wraps in a lot in the way of additional components meant for the browser.
+- That includes functionality like views, assets, etc.
+- There is a gem called [rails-api](https://github.com/rails-api/rails-api) that allows you to create a stripped-down project to be used as an api only.
+- This gem will be merged into core Rails in the 5th version.
+
 ## CSRF with APIs
 - As you remember, CSRF tokens help us to prevent forgery when dealing with forms.
 - The problem though is that with an API there is no CSRF token. We can easily fix this in application_controller.rb:
