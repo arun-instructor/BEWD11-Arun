@@ -34,3 +34,10 @@
 ## Week 9: OAuth and JSON API
 - [Day 1: OAuth](week_9/day_1/)
 - [Day 2: Building an API](week_9/day_2/)
+
+## Week 10: Testing
+- Day 1: Introduction to RSpec
+- Day 2: Project Work Time
+
+## Week 11: Presentations and Graduation!
+- Day 1: Present Your Hard Work!
