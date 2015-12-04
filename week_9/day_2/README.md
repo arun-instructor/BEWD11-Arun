@@ -167,6 +167,7 @@ end
 - The API design documentation can be found [here](angular_email/api_specs.md).
 - Your job is to create an API with all of the endpoints listed in the documentation.
 - You will also need to implement token-based authentication on all of the functionality except signup and login.
+- Since the app is accessing the API from a different domain (your local computer), you will need to enable Cross Origin Resource Sharing (CORS). A simple gem can be found [here](https://github.com/cyu/rack-cors).
 - Since you will be implementing login and signup with Devise through AJAX, a small tweak must be performed to get Devise to work with AJAX requests:
 
 ##### controllers/sessions_controller.rb
