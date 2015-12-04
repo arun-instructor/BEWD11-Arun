@@ -62,3 +62,4 @@ response_json = JSON.parse(response)
 	- Associations
 	- JSON APIs
 	- System architecture
+	- Authentication
