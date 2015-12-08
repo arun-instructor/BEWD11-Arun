@@ -36,7 +36,7 @@
 - [Day 2: Building an API](week_9/day_2/)
 
 ## Week 10: Testing
-- Day 1: Introduction to RSpec
+- [Day 1: Introduction to RSpec](week_10/day_1/)
 - Day 2: Project Work Time
 
 ## Week 11: Presentations and Graduation!
